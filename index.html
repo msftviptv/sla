@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+  <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+  
+  <title>CodePen - Random Messages</title>
+  
+  
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  
+<style>
+body {
+    padding-top: 50px;
+}
+
+.well{
+  background-color: #eee;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #222;
+    text-align: center;
+    border-color: #333;
+    /*Gradient values*/
+    background: #222222;
+    background: -moz-linear-gradient(top, #222222 25%, #333333 50%, #222222 75%);
+    background: -webkit-linear-gradient(top, #222222 25%, #333333 50%, #222222 75%);
+    background: linear-gradient(to bottom, #222222 25%, #333333 50%, #222222 75%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#222222', GradientType=0);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-center">Challenge 3.11 - Random Messages</h1>
+
+            <p>Use jQuery to display a random message to the user</p>
+
+                <ul>
+                    <li>Start by creating an array of 10 random messages (strings).</li>
+                    <li>On page load, the page should have the message "Hello!"</li>
+                    <li>Beneath that, add a button that says "New Message".</li>
+                    <li>When the button is clicked, randomly select a new message to display on the screen (this will replace the old message).</li>
+                    <li>The button should be able to be clicked as many times as you want - every click will change the message.</li>
+                </ul>
+            
+        </div>
+        <div class="well">
+            <p class="lead text-center" id="wellSentence">Hello!</p>
+        </div>
+        <!-- End Well -->
+
+        <div class="generator text-center">
+            <button class="btn btn-warning" type="button" name="button" id="generateNew">Generate New Sentence!</button>
+        </div>
+
+    </div>
+    <!-- End Container -->
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Challenge 3.11 - Random Messages</p>
+        </div>
+    </footer>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+      <script id="rendered-js" >
+$(document.body).click(function () {
+
+  var sentenceArray = [
+  "Thou shalt have no other gods before Me.",
+  "Thou shalt not make idols.",
+  "Thou shalt not take the name of the LORD thy God in vain.",
+  "Remember the Sabbath day, to keep it holy.",
+  "Honor thy father and thy mother.",
+  "Thou shalt not murder.",
+  "Thou shalt not commit adultery.",
+  "Thou shalt not steal.",
+  "Thou shalt not bear false witness against thy neighbor.",
+  "Thou shalt not covet thy neighbour’s wife, thou shalt not covet thy neighbour’s house ."],
+
+
+  randSentence = sentenceArray[Math.floor(Math.random() * sentenceArray.length)];
+  document.getElementById("wellSentence").textContent = randSentence;
+  if (typeof prevSentence == "undefined") {
+    newSentence = randSentence;
+  } else {
+    newSentence = randSentence;
+    if (newSentence == prevSentence) randomNum += 1;
+  };
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
